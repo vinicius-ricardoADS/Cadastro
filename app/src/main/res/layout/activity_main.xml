@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/nomeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:labelFor="@id/inputNome"
+        android:text="Nome Completo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputNome"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nomeTv"
+        android:inputType="textPersonName"/>
+
+    <TextView
+        android:id="@+id/telefoneTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="Telefone"
+        app:layout_constraintTop_toBottomOf="@id/inputNome"/>
+
+    <EditText
+        android:id="@+id/inputTelefone"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"
+        android:text="Ex: 12-93456-7890"
+        android:textSize="@dimen/txt_size"
+        android:inputType="phone"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/telefoneTv" />
+
+    <TextView
+        android:id="@+id/emailTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="Email"
+        android:labelFor="@id/inputEmail"
+        app:layout_constraintTop_toBottomOf="@id/inputTelefone"/>
+
+    <EditText
+        android:id="@+id/inputEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailTv" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingressar na lista de e-mails ?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputEmail"/>
+
+    <RadioButton
+        android:id="@+id/radioButtonM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masculino"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="311dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBox"/>
+
+    <RadioButton
+        android:id="@+id/radioButtonF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feminino"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="311dp"
+        app:layout_constraintStart_toEndOf="@id/radioButtonM"
+        app:layout_constraintTop_toBottomOf="@id/checkBox"/>
+
+    <TextView
+        android:id="@+id/cidadeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:labelFor="@id/inputCidade"
+        android:text="Cidade"
+        app:layout_constraintTop_toBottomOf="@id/radioButtonF"/>
+
+    <EditText
+        android:id="@+id/inputCidade"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cidadeTv" />
+
+    <TextView
+        android:id="@+id/ufTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:text="UF"
+        app:layout_constraintTop_toBottomOf="@id/inputCidade"/>
+
+    <Spinner
+        android:id="@+id/ufSp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:entries="@array/uf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ufTv"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpar"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="486dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@id/ufSp"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        tools:layout_editor_absoluteX="214dp"
+        tools:layout_editor_absoluteY="482dp"
+        app:layout_constraintStart_toEndOf="@id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ufSp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

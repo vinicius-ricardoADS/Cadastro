@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Cadastro</string>
+    <string-array name="uf">
+        <item>AC</item>
+        <item>AP</item>
+        <item>AM</item>
+        <item>PA</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>TO</item>
+        <item>AL</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>MA</item>
+        <item>PB</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>RN</item>
+        <item>SE</item>
+        <item>DF</item>
+        <item>GO</item>
+        <item>MT</item>
+        <item>MS</item>
+        <item>ES</item>
+        <item>MG</item>
+        <item>RJ</item>
+        <item>SP</item>
+        <item>PR</item>
+        <item>RS</item>
+        <item>SC</item>
+    </string-array>
+</resources>
