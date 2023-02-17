@@ -43,7 +43,7 @@
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:layout_marginTop="5dp"
-        android:text="Ex: 12-93456-7890"
+        android:hint="Ex: 12-93456-7890"
         android:textSize="@dimen/txt_size"
         android:inputType="phone"
         app:layout_constraintEnd_toStartOf="parent"
@@ -81,25 +81,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputEmail"/>
 
-    <RadioButton
-        android:id="@+id/radioButtonM"
+    <RadioGroup
+        android:id="@+id/sexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Masculino"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="311dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkBox"/>
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/checkBox"
+        tools:ignore="MissingConstraints">
+        <RadioButton
+            android:id="@+id/radioButtonM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masculino"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="311dp"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
-    <RadioButton
-        android:id="@+id/radioButtonF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Feminino"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="311dp"
-        app:layout_constraintStart_toEndOf="@id/radioButtonM"
-        app:layout_constraintTop_toBottomOf="@id/checkBox"/>
+        <RadioButton
+            android:id="@+id/radioButtonF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feminino"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="311dp"
+            app:layout_constraintStart_toEndOf="@id/radioButtonM"
+            />
+    </RadioGroup>
+
 
     <TextView
         android:id="@+id/cidadeTv"
@@ -110,7 +119,7 @@
         android:layout_marginTop="5dp"
         android:labelFor="@id/inputCidade"
         android:text="Cidade"
-        app:layout_constraintTop_toBottomOf="@id/radioButtonF"/>
+        app:layout_constraintTop_toBottomOf="@id/sexo"/>
 
     <EditText
         android:id="@+id/inputCidade"
@@ -149,6 +158,7 @@
         android:text="Limpar"
         tools:layout_editor_absoluteX="58dp"
         tools:layout_editor_absoluteY="486dp"
+        android:onClick="clear"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintTop_toBottomOf="@id/ufSp"/>
@@ -160,6 +170,7 @@
         android:text="Salvar"
         tools:layout_editor_absoluteX="214dp"
         tools:layout_editor_absoluteY="482dp"
+        android:onClick="save"
         app:layout_constraintStart_toEndOf="@id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ufSp"/>
