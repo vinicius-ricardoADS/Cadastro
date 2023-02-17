@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 nameTx.setText("");
                 phoneTx.setText("");
                 cityTx.setText("");
-                cityTx.setText("");
+                emailTx.setText("");
             }
         });
 
