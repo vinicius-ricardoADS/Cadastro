@@ -13,6 +13,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText nameTx;
@@ -62,17 +64,20 @@ public class MainActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Formulario form;
-                RadioButton button = (RadioButton) group.findViewById(R.id.radioButtonM);
-                if (button.isActivated()) {
-                    form = new Formulario(nameTx.getText().toString(), phoneTx.getText().toString(), emailTx.getText().toString(),
-                            button.getText().toString(), cityTx.getText().toString(), spinnerUf.getSelectedItem().toString());
-                } else {
-                    button = (RadioButton) group.findViewById(R.id.radioButtonF);
-                    form = new Formulario(nameTx.getText().toString(), phoneTx.getText().toString(), emailTx.getText().toString(),
-                            button.getText().toString(), cityTx.getText().toString(), spinnerUf.getSelectedItem().toString());
+                Formulario form = null;
+                RadioButton buttonM = (RadioButton) group.findViewById(R.id.radioButtonM);
+                RadioButton buttonF = (RadioButton) group.findViewById(R.id.radioButtonF);
+                switch (group.getCheckedRadioButtonId()) {
+                    case R.id.radioButtonM:
+                        form = new Formulario(nameTx.getText().toString(), phoneTx.getText().toString(), emailTx.getText().toString(),
+                                buttonM.getText().toString(), cityTx.getText().toString(), spinnerUf.getSelectedItem().toString());
+                        break;
+                    case R.id.radioButtonF:
+                        form = new Formulario(nameTx.getText().toString(), phoneTx.getText().toString(), emailTx.getText().toString(),
+                                buttonF.getText().toString(), cityTx.getText().toString(), spinnerUf.getSelectedItem().toString());
+                        break;
                 }
-                Toast.makeText(getApplicationContext(), form.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), Objects.requireNonNull(form).toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
